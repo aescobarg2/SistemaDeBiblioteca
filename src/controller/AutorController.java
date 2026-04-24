@@ -5,8 +5,8 @@ import model.Biblioteca;
 
 public class AutorController {
 
-    public void AgregarAutor(int id, String nombre, String pais, int anioNacimmiento, Biblioteca biblioteca) {
-        Autor autor = new Autor(id, nombre, pais, anioNacimmiento);
+    public void AgregarAutor(String nombre, String pais, int anioNacimmiento, Biblioteca biblioteca) {
+        Autor autor = new Autor(biblioteca.getAutores().size() + 1, nombre, pais, anioNacimmiento);
         biblioteca.registrarAutor(autor);
     }
 

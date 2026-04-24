@@ -19,6 +19,18 @@ public class Biblioteca {
     public void registrarPrestamo(Prestamo p) { prestamos.add(p); }
 
 
+    public ArrayList<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public ArrayList<Autor> getAutores() {
+        return autores;
+    }
+
+    public ArrayList<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
     public void mostrarEstado() {
         System.out.println("--- Reporte de Biblioteca ---");
         System.out.println("Autores registrados: " + autores.size());
