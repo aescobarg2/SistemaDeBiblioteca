@@ -8,12 +8,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+    //==================// Declaracion de variables //==================//
     private static Scanner leer = new Scanner(System.in);
     public static Biblioteca miBiblioteca = new Biblioteca();
     private static CategoriaController categoriaController = new CategoriaController();
     private static AutorController autorController = new AutorController();
 
-    //==================//Funciones//==============//
+
+
+    //==================//Funciones//==================//
     public static void crearCategoria(){
 
         System.out.print("Ingrese el nombre de la categoria: ");
@@ -36,7 +39,7 @@ public class Main {
         autorController.AgregarAutor(nombrAutor,nombrePais,nombreanio, miBiblioteca);
     }
 
-
+    //==================// Main //==================//
     public static void main(String[] args) {
 
 
@@ -63,15 +66,50 @@ public class Main {
 
                 switch(opcion){
                     case 1:
-
                         crearCategoria();
                         break;
+
                     case 2:
                         agregarAutor();
                         break;
+
                     case 3:
+
+                        break;
+
                     case 4:
+
+                        break;
+
                     case 5:
+
+                        break;
+
+                    case 6:
+
+                        break;
+
+                    case 7:
+
+                        break;
+
+                    case 8:
+
+                        break;
+
+                    case 9:
+
+                        break;
+
+                    case 10:
+
+                        break;
+
+                    case 11:
+                        System.out.println("Fin del programa");
+                        break;
+
+
                 }
 
             } catch (InputMismatchException e) {
@@ -83,6 +121,6 @@ public class Main {
                 leer.nextLine();
             }
 
-        } while (opcion != 6);
+        } while (opcion !=11);
     }
 }
