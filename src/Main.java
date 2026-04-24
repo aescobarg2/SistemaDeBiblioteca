@@ -25,6 +25,14 @@ public class Main {
                 opcion = leer.nextInt();
                 leer.nextLine();
 
+                switch(opcion){
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                }
+
             } catch (InputMismatchException e) {
                 System.out.println("ERROR: Debe ingresar un valor numerico válido.");
                 leer.nextLine();
