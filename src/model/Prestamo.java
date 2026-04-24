@@ -4,41 +4,45 @@ public class Prestamo {
     private final int id;
     private Libro libro;
     private String usuario;
-    private String fechas;
+    private int fechaPrestamo;
+    private int fechaEntrega;
+    private boolean devuelto;
 
-    public Prestamo(int id, Libro libro, String usuario, String fechas) {
+    public Prestamo(int id, Libro libro, String usuario, int fechaPrestamo, int fechaEntrega) {
         this.id = id;
         this.libro = libro;
         this.usuario = usuario;
-        this.fechas = fechas;
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaEntrega = fechaEntrega;
+        this.devuelto = false;
     }
 
     @Override
     public String toString() {
-        return "Prestamo :" + id + ": " + libro.getTitulo() + " a " + usuario + " [" + fechas + "]";
+        return "Prestamo " + id +
+                ": " + libro.getTitulo() +
+                " a " + usuario +
+                " [Entrega: dia " + fechaEntrega + "]" +
+                (devuelto ? " (Devuelto)" : "");
+    }
+
+    public int getFechaEntrega() {
+        return fechaEntrega;
+    }
+
+    public boolean isDevuelto() {
+        return devuelto;
+    }
+
+    public void setDevuelto(boolean devuelto) {
+        this.devuelto = devuelto;
     }
 
     public Libro getLibro() {
         return libro;
     }
 
-    public void setLibro(Libro libro) {
-        this.libro = libro;
-    }
-
     public String getUsuario() {
         return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getFechas() {
-        return fechas;
-    }
-
-    public void setFechas(String fechas) {
-        this.fechas = fechas;
     }
 }

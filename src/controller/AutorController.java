@@ -2,6 +2,8 @@ package controller;
 
 import model.Autor;
 import model.Biblioteca;
+import model.Categoria;
+import model.Libro;
 
 public class AutorController {
 
@@ -10,7 +12,14 @@ public class AutorController {
         biblioteca.registrarAutor(autor);
     }
 
-    public void verDetallesAutor(Biblioteca biblioteca, Autor autor) {
-
+    public Autor verDetallesAutor(String isbn, Biblioteca biblioteca) {
+        for(Categoria c : biblioteca.getCategorias()) {
+            for(Libro l : c.getListaLibros()) {
+                if(isbn.equals(l.getIsbn())) {
+                    return l.getAutor();
+                }
+            }
+        }
+        return null;
     }
 }

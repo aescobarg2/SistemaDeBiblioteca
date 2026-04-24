@@ -2,7 +2,7 @@ package model;
 
 
 public class Autor {
-    private int id;
+    private static int id;
     private final String nombre; // Cannot be modified after constructor
     private String pais;
     private int anioNacimiento;
@@ -11,11 +11,11 @@ public class Autor {
         this.nombre = nombre;
     }
 
-    public Autor(int id, String nombre, String pais, int añoNacimiento) {
+    public Autor(int id, String nombre, String pais, int anioNacimiento) {
         this.id = id;
         this.nombre = nombre;
         this.pais = pais;
-        this.anioNacimiento = añoNacimiento;
+        this.anioNacimiento = anioNacimiento;
     }
 
     public int getId() {
@@ -42,7 +42,18 @@ public class Autor {
         return anioNacimiento;
     }
 
-    public void setAñoNacimiento(int añoNacimiento) {
-        this.anioNacimiento = añoNacimiento;
+    public void setAñoNacimiento(int anioNacimiento) {
+        this.anioNacimiento = anioNacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[%d] %s | %s | Nacimiento: %d",
+                id,
+                nombre,
+                pais,
+                anioNacimiento
+        );
     }
 }

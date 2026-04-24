@@ -4,13 +4,14 @@ public class Libro {
     private final String isbn;
     private final String titulo;
     private Autor autor;
-    private Categoria categoria;
+    private boolean isPrestado;
 
-    public Libro(String isbn, String titulo, Autor autor, Categoria categoria) {
+
+    public Libro(String isbn, String titulo, Autor autor) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
-        this.categoria = categoria;
+        this.isPrestado = false;
     }
 
 
@@ -25,7 +26,24 @@ public class Libro {
         this.autor = autor;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public boolean isPrestado() {
+        return isPrestado;
+    }
+
+    public void setisPrestado(boolean prestado) {
+        this.isPrestado = prestado;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "%s | %s",
+                isbn,
+                titulo
+        );
     }
 }
